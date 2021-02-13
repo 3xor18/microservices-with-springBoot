@@ -1,0 +1,9 @@
+package com.formaciondbi.microservicios.app.respuestas.services;
+
+import com.formaciondbi.microservicios.app.respuestas.models.entity.Respuesta;
+
+public interface RespuestaService {
+
+	public Iterable<Respuesta> saveAll();
+
+}

@@ -1,0 +1,35 @@
+package com.formaciondbi.microservicios.app.examenes.services;
+
+import java.util.Optional;
+
+import com.formaciondbi.microservicios.app.examenes.models.entity.Examen;
+import com.formaciondbi.microservicios.app.examenes.models.entity.repository.ExamenRepository;
+import com.formaciondbi.microservicios.commods.services.CommonsServiceImpl;
+
+public class ExamenServiceImpl extends CommonsServiceImpl<Examen, ExamenRepository> implements ExamenService {
+
+	@Override
+	public Iterable<Examen> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<Examen> findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Examen save(Examen entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

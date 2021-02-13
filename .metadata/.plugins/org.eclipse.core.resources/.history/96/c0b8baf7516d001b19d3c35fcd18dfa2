@@ -1,0 +1,5 @@
+package com.formaciondbi.microservicios.app.cursos.models.entity.repository;
+
+public interface CursoRepository {
+
+}

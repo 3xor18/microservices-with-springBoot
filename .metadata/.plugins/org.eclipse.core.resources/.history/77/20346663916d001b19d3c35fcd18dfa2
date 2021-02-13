@@ -1,0 +1,7 @@
+package com.formaciondbi.microservicios.app.examenes.models.entity.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface ExamenRepository extends CrudRepository<T, ID> {
+
+}

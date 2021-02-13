@@ -1,0 +1,13 @@
+package com.formaciondbi.microservicios.app.usuarios.services;
+
+import java.util.Optional;
+
+import com.formaciondbi.microservicios.app.usuarios.models.entity.Alumno;
+
+public interface AlumnoService {
+	
+	public Iterable<Alumno> findAll();
+	
+	public Optional<Alumno> findById(Long id);
+
+}

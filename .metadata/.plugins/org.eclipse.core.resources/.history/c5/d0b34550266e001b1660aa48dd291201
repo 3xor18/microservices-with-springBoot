@@ -1,0 +1,15 @@
+package com.formaciondbi.microservicios.app.examenes.models.entity.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.formaciondbi.microservicios.commons.examenes.models.entity.Examen;
+
+public interface ExamenRepository extends CrudRepository<Examen, Long> {
+
+	@Query("SELECT e  FROM Examen e where e.nombre LIKE %?1%")
+	public List<Examen> findByNombre(String term);
+
+}

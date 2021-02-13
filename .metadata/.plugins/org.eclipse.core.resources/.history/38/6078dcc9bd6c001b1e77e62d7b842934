@@ -1,0 +1,9 @@
+package com.formaciondbi.microservicios.app.usuarios.services;
+
+import com.formaciondbi.microservicios.app.usuarios.models.entity.Alumno;
+
+public interface AlumnoService {
+	
+	public Iterable<Alumno> findAll();
+
+}

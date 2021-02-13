@@ -1,0 +1,5 @@
+package com.formaciondbi.microservicios.app.respuestas.services;
+
+public class RespuestaServiceImpl {
+
+}

@@ -1,0 +1,7 @@
+package com.formaciondbi.microservicios.app.respuestas.models.entity.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface RespuestaRepository extends CrudRepository<T, ID> {
+
+}

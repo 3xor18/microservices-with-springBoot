@@ -1,0 +1,13 @@
+package com.formaciondbi.microservicios.commods;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CommodsMicroserviciosApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CommodsMicroserviciosApplication.class, args);
+	}
+
+}

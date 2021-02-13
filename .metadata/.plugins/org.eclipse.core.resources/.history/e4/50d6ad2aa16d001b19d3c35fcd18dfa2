@@ -1,0 +1,12 @@
+package com.formaciondbi.microservicios.app.examenes.services;
+
+import org.springframework.stereotype.Service;
+
+import com.formaciondbi.microservicios.app.examenes.models.entity.Examen;
+import com.formaciondbi.microservicios.app.examenes.models.entity.repository.ExamenRepository;
+import com.formaciondbi.microservicios.commods.services.CommonsServiceImpl;
+
+@Service
+public class ExamenServiceImpl extends CommonsServiceImpl<Examen, ExamenRepository> implements ExamenService {
+
+}

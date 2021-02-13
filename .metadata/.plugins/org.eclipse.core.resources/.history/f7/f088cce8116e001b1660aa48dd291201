@@ -1,0 +1,8 @@
+package com.formaciondbi.microservicios.app.examenes.services;
+
+import com.formaciondbi.microservicios.commods.services.CommonsService;
+import com.formaciondbi.microservicios.commons.examenes.models.entity.Examen;
+
+public interface ExamenService extends CommonsService<Examen> {
+
+}

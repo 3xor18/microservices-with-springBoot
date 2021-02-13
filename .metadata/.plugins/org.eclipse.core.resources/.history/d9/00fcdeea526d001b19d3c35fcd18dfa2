@@ -1,0 +1,5 @@
+package com.formaciondbi.microservicios.app.cursos.services;
+
+public interface CursoService {
+
+}

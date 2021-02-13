@@ -1,0 +1,12 @@
+package com.formaciondbi.microservicios.app.cursos.services;
+
+import java.util.Optional;
+
+import com.formaciondbi.microservicios.app.cursos.models.entity.Curso;
+import com.formaciondbi.microservicios.commods.services.CommonsServiceImpl;
+
+public class CursoServiceImpl extends CommonsServiceImpl<E, R> implements CursoService {
+
+
+
+}

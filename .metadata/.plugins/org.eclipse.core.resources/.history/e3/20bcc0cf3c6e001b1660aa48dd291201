@@ -1,0 +1,24 @@
+package com.formaciondbi.microservicios.app.respuestas.services;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.formaciondbi.microservicios.app.respuestas.models.entity.Respuesta;
+import com.formaciondbi.microservicios.app.respuestas.models.entity.repository.RespuestaRepository;
+
+@Service
+public class RespuestaServiceImpl implements RespuestaService {
+
+	@Autowired
+	private RespuestaRepository repository;
+
+	@Override
+	@Transactional
+	public Iterable<Respuesta> saveAll(Iterable<Respuesta> respuestas) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
