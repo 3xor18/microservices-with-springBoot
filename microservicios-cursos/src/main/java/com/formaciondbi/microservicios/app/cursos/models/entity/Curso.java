@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,8 +17,10 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.formaciondbi.microservicios.commond.alumnos.models.entity.Alumno;
 import com.formaciondbi.microservicios.commons.examenes.models.entity.Examen;
 
@@ -28,6 +31,7 @@ public class Curso {
 	public Curso() {
 		this.alumnos = new ArrayList<>();
 		this.examenes = new ArrayList<>();
+		this.cursosAlumnos = new ArrayList<>();
 	}
 
 	@Id
@@ -41,11 +45,16 @@ public class Curso {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createAt;
 
-	@OneToMany(fetch = FetchType.LAZY)
+	// @OneToMany(fetch = FetchType.LAZY)
+	@Transient
 	private List<Alumno> alumnos;
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	private List<Examen> examenes;
+
+	@JsonIgnoreProperties(value = { "curso" }, allowSetters = true)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "curso", cascade = CascadeType.ALL, orphanRemoval = true)
+	List<CursoAlumno> cursosAlumnos;
 
 	@PrePersist
 	public void prePersist() {
@@ -92,6 +101,7 @@ public class Curso {
 		this.alumnos.remove(alumno);
 	}
 
+	// -------------Examenes----------------
 	public List<Examen> getExamenes() {
 		return examenes;
 	}
@@ -107,5 +117,25 @@ public class Curso {
 	public void removeExamenes(Examen examen) {
 		this.examenes.remove(examen);
 	}
+
+	// -------------Examenes----------------
+
+	// -------------cursos Alumnos----------------
+	public List<CursoAlumno> getCursosAlumnos() {
+		return cursosAlumnos;
+	}
+
+	public void setCursosAlumnos(List<CursoAlumno> cursosAlumnos) {
+		this.cursosAlumnos = cursosAlumnos;
+	}
+
+	public void addCursosAlumnos(CursoAlumno cursoAlumno) {
+		this.cursosAlumnos.add(cursoAlumno);
+	}
+
+	public void removeCursosAlumnos(CursoAlumno cursoAlumno) {
+		this.cursosAlumnos.remove(cursoAlumno);
+	}
+	// -------------cursos Alumnos----------------
 
 }

@@ -1,6 +1,7 @@
 package com.formaciondbi.microservicios.app.usuarios.controllers;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -90,6 +91,11 @@ public class AlumnoControl extends CommondControl<Alumno, AlumnoService> {
 		Resource imagen = new ByteArrayResource(o.get().getFoto());
 
 		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen);
+	}
+
+	@GetMapping("/alumnos-por-curso")
+	public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids) {
+		return ResponseEntity.ok(service.findAllbyId(ids));
 	}
 
 }

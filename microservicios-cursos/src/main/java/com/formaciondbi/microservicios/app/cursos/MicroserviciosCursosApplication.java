@@ -9,8 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 @EnableEurekaClient
 @SpringBootApplication
-@EntityScan({ "com.formaciondbi.microservicios.commond.alumnos.models.entity",
-		"com.formaciondbi.microservicios.commons.examenes.models.entity",
+@EntityScan({ "com.formaciondbi.microservicios.commons.examenes.models.entity",
 		"com.formaciondbi.microservicios.app.cursos.models.entity" })
 public class MicroserviciosCursosApplication {
 
