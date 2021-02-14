@@ -1,0 +1,8 @@
+package com.formaciondbi.microservicios.app.usuarios.client;
+
+import org.springframework.cloud.openfeign.EnableFeignClients;
+
+@EnableFeignClients
+public interface CursoFeingClient {
+
+}

@@ -1,0 +1,5 @@
+package com.formaciondbi.microservicios.app.usuarios.client;
+
+public interface CursoFeingClient {
+
+}
