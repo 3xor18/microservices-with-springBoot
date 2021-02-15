@@ -1,0 +1,15 @@
+package com.formaciondbi.microservicios.app.respuestas.Client;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.formaciondbi.microservicios.commons.examenes.models.entity.Examen;
+
+@FeignClient(name = "microservicio-examenes")
+public interface ExamenesFeingClient {
+
+	@GetMapping("/{id}")
+	public Examen obtenerExamenPorId(@PathVariable Long id);
+
+}

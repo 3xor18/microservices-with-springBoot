@@ -1,0 +1,5 @@
+package com.formaciondbi.microservicios.app.respuestas.Client;
+
+public interface ExamenesFeingClient {
+
+}

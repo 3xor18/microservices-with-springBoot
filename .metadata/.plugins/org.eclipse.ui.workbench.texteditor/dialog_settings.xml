@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="buscar"/>
 		<list key="findhistory">
+			<item value="buscar"/>
+			<item value="jpa"/>
 			<item value="mysql"/>
 			<item value="mys"/>
 		</list>

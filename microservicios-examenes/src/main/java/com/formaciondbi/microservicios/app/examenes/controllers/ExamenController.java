@@ -1,5 +1,6 @@
 package com.formaciondbi.microservicios.app.examenes.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.formaciondbi.microservicios.app.examenes.services.ExamenService;
@@ -49,6 +51,11 @@ public class ExamenController extends CommondControl<Examen, ExamenService> {
 	@GetMapping("/asignaturas")
 	public ResponseEntity<?> listarAsignaturas() {
 		return ResponseEntity.ok(service.findAllAsignaturas());
+	}
+
+	@GetMapping("/respondidos-por-preguntas")
+	public ResponseEntity<?> obtenerExamenesIdsPorPreguntasRespondidos(@RequestParam List<Long> preguntasIds) {
+		return ResponseEntity.ok().body(service.findExamenesIdsConRespuestasByPreguntaId(preguntasIds));
 	}
 
 }
